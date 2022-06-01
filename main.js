@@ -1,5 +1,5 @@
 "use strict";
-
+(()=>{
 let projects = [];
 window.addEventListener("load", function () {
     buildConfigForm();
@@ -16,7 +16,7 @@ async function buildConfigForm() {
         nameView.innerHTML = projects[index].project;
         teamView.innerHTML = projects[index].team;
         resultView.innerHTML = projects[index].result;
-        
+
     }
     
 }
@@ -58,3 +58,4 @@ function buildProjectFromArray(projectArrayItem) {
         result: projectArrayItem[11],
     }
 }
+})();
