@@ -17,7 +17,10 @@ async function buildConfigForm() {
 }
 
 function searchAndUpdate(codeQuery){
+    if(codeQuery=="") return;
+    
     let index = projects.findIndex((item) => item.codeA == codeQuery || item.codeB == codeQuery);
+    
     if(index!==-1){
         let nameView = document.querySelector(".project-name");
         let teamView = document.querySelector(".project-team");
@@ -34,6 +37,8 @@ function searchAndUpdate(codeQuery){
         });
         commentsView.innerHTML  = comments;
     }
+
+
 }
 
 const fetchDatabase = async (url) => {
