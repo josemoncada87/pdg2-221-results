@@ -18,7 +18,7 @@ async function buildConfigForm() {
         teamView.innerHTML = projects[index].team;
         resultView.innerHTML = projects[index].result;
         let parts =  projects[index].comments.split('//');
-        let filtered = parts.filter(item=>item !== "");
+        let filtered = parts.filter(item => item !== "" && item !== " ");
         let comments = "";
         filtered.forEach((item)=>{
             comments += "* " + item + "<br><br>";
