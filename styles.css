@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.project-search{
+    margin: 8px;
+    padding: 8px;
+}
 .card-result{
     margin: 8px;
     padding: 8px;

@@ -7,7 +7,16 @@ window.addEventListener("load", function () {
 
 async function buildConfigForm() {
     await updateValues();
-    let codeQuery = prompt("inserte el código de uno de los integrantes");
+    let buttonSearch = document.querySelector("#search-btn");
+    let codeSearch = document.querySelector("#search-txt");
+    buttonSearch.addEventListener(
+        "click", () => {
+            searchAndUpdate(codeSearch.value);
+        } 
+    );
+}
+
+function searchAndUpdate(codeQuery){
     let index = projects.findIndex((item) => item.codeA == codeQuery || item.codeB == codeQuery);
     if(index!==-1){
         let nameView = document.querySelector(".project-name");
@@ -26,6 +35,7 @@ async function buildConfigForm() {
         commentsView.innerHTML  = comments;
     }
 }
+
 const fetchDatabase = async (url) => {
     try {
         const response = await fetch(url);
