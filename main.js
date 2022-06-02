@@ -13,9 +13,12 @@ async function buildConfigForm() {
         let nameView = document.querySelector(".project-name");
         let teamView = document.querySelector(".project-team");
         let resultView = document.querySelector(".project-result");
+        let commentsView = document.querySelector(".project-comments");
+        
         nameView.innerHTML = projects[index].project;
         teamView.innerHTML = projects[index].team;
         resultView.innerHTML = projects[index].result;
+        commentsView.innerHTML  = projects[index].comments;
 
     }
     
@@ -56,6 +59,7 @@ function buildProjectFromArray(projectArrayItem) {
         codeA: projectArrayItem[3],
         codeB: projectArrayItem[7],
         result: projectArrayItem[11],
+        comments: projectArrayItem[12]
     }
 }
 })();
