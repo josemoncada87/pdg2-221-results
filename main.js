@@ -14,14 +14,17 @@ async function buildConfigForm() {
         let teamView = document.querySelector(".project-team");
         let resultView = document.querySelector(".project-result");
         let commentsView = document.querySelector(".project-comments");
-        
         nameView.innerHTML = projects[index].project;
         teamView.innerHTML = projects[index].team;
         resultView.innerHTML = projects[index].result;
-        commentsView.innerHTML  = projects[index].comments;
-
+        let parts =  projects[index].comments.split('//');
+        let filtered = parts.filter(item=>item !== "");
+        let comments = "";
+        filtered.forEach((item)=>{
+            comments += "* " + item + "<br><br>";
+        });
+        commentsView.innerHTML  = comments;
     }
-    
 }
 const fetchDatabase = async (url) => {
     try {
